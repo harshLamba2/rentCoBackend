@@ -6,6 +6,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import dbConnection from "./src/database/dbConnection.js";
 import routes from "./src/routes.js";
+import error from "./src/middleware/error.js";
+import requestParameters from "./src/middleware/requestParameters.js";
 
 dotenv.config({ path: ".env" });
 
@@ -25,6 +27,10 @@ app.use(
 
 dbConnection();
 
+app.use(requestParameters);
+
 app.use("/api/", routes);
+
+app.use(error);
 
 app.listen(PORT, () => console.log("Listening on PORT " + PORT));

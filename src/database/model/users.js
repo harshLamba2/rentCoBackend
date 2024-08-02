@@ -2,11 +2,11 @@ import mongoose, { Schema } from "mongoose";
 
 const userSchema = new Schema(
   {
-    name: {
+    userName: {
       type: String,
       required: true,
     },
-    email: {
+    userEmail: {
       type: String,
       required: true,
     },
@@ -14,16 +14,29 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    password: {
+    gender: {
       type: String,
       required: true,
+    },
+    dateOfBirth: {
+      type: String,
+      required: true,
+    },
+    active: {
+      type: Boolean,
+      default: false,
+    },
+    password: {
+      type: String,
     },
     otp: {
       type: String,
-      required: true,
     },
     otpSentTime: {
       type: Date,
+    },
+    otpAttempts: {
+      type: Number,
     },
   },
   {

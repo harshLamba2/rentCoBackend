@@ -1,7 +1,13 @@
 import express from "express";
 const router = express.Router();
-import { authenticateUser } from "./authenticationController.js";
+import {
+  sendVerificationCode,
+  verifyUserEmail,
+  setUserPassword,
+} from "./authenticationController.js";
 
-router.post("/authenticateUser", authenticateUser);
+router.post("/sendVerificationCode", sendVerificationCode);
+router.post("/verifyUserEmail", verifyUserEmail);
+router.put("/setUserPassword", setUserPassword);
 
 export default router;
