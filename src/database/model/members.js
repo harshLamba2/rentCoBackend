@@ -2,15 +2,19 @@ import mongoose, { Schema } from "mongoose";
 
 const memberSchema = new Schema(
   {
-    name: {
+    memberName: {
       type: String,
       required: true,
     },
-    email: {
+    memberEmail: {
       type: String,
     },
     phoneNumber: {
       type: String,
+    },
+    active: {
+      type: Boolean,
+      default: true,
     },
     phoneNumberBackup: {
       type: String,
@@ -26,7 +30,7 @@ const memberSchema = new Schema(
       type: Number,
     },
     aadhaarNumber: {
-      type: Long,
+      type: String,
     },
     // tenantPicture:{}
   },

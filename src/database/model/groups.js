@@ -14,7 +14,7 @@ const groupSchema = new Schema(
       type: String,
       required: true,
     },
-    memeberId: {
+    memberId: {
       type: String,
       required: true,
     },
